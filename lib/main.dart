@@ -33,6 +33,11 @@ class _TodoAPPState extends State<TodoAPP> {
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
                     return ListTile(
+                      onTap: () {
+                        setState(() {
+                          deleteTask(snapshot.data![index].id);
+                        });
+                      },
                       title: Text(snapshot.data![index].title),
                       subtitle: Text(snapshot.data![index].description),
                       trailing:
@@ -49,11 +54,14 @@ class _TodoAPPState extends State<TodoAPP> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            addTask(Todo(
-              title: 'Test',
-              description: 'Test',
-              completed: false,
-            ));
+            setState(() {
+              addTask(Todo(
+                id: 1,
+                title: 'Test',
+                description: 'Test',
+                completed: false,
+              ));
+            });
           },
           child: const Icon(Icons.add),
         ));
