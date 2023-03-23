@@ -25,7 +25,7 @@ class _TodoAPPState extends State<TodoAPP> {
           title: const Text('Todo App'),
         ),
         body: Center(
-          child: FutureBuilder(
+          child: FutureBuilder(        
             future: getTodo(),
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {

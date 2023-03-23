@@ -41,7 +41,7 @@ Future addTask(Todo todo) async {
     headers: {'Content-type': 'application/json'},
     body: jsonEncode(
       {
-        'title': 'Boldilariyizmi',
+        'title': 'Alisher',
         'description': 'Alisher',
       },
     ),
